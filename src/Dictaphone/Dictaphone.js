@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useSpeechRecognition } from '../SpeechRecognition'
+import { Container, Row, Col } from 'react-bootstrap'
 
 const Dictaphone = ({ commands }) => {
   const [transcribing, setTranscribing] = useState(true)
@@ -33,15 +34,29 @@ const Dictaphone = ({ commands }) => {
   }
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column' }}>
-      <span>listening: {listening ? 'on' : 'off'}</span>
-      <span>transcribing: {transcribing ? 'on' : 'off'}</span>
-      <span>clearTranscriptOnListen: {clearTranscriptOnListen ? 'on' : 'off'}</span>
-      <button onClick={resetTranscript}>Reset</button>
-      <button onClick={toggleTranscribing}>Toggle transcribing</button>
-      <button onClick={toggleClearTranscriptOnListen}>Toggle clearTranscriptOnListen</button>
-      <span>{transcript}</span>
-    </div>
+    <Container>
+      <Row>
+        <Col>
+          <Row>
+            <span>listening: {listening ? 'on' : 'off'}</span>
+          </Row>
+          <Row>
+            <span>transcribing: {transcribing ? 'on' : 'off'}</span>
+          </Row>
+          <Row>
+            <span>clearTranscriptOnListen: {clearTranscriptOnListen ? 'on' : 'off'}</span>
+          </Row>
+        </Col>
+      </Row>
+      <Row>
+        <button onClick={resetTranscript}>Reset</button>
+        <button onClick={toggleTranscribing}>Toggle transcribing</button>
+        <button onClick={toggleClearTranscriptOnListen}>Toggle clearTranscriptOnListen</button>
+      </Row>
+      <Row>
+        <span>{transcript}</span>
+      </Row>
+    </Container>
   )
 }
 
