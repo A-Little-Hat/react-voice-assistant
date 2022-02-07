@@ -27,13 +27,12 @@ const DictaphoneWidgetA = () => {
         }
       },
     },
-    // {
-    //   command: ['eat', 'sleep', 'leave'],
-    //   callback: (command) => setMessage(`Best matching command: ${command}`),
-    //   isFuzzyMatch: true,
-    //   fuzzyMatchingThreshold: 0.2,
-    //   bestMatchOnly: true
-    // },
+    {
+      command: 'turn on chrome',
+      callback: async (app) => {
+        setMessage(`Opening ${app}`)
+      }
+    },
     {
       command: ['clear', 'reset', 'clear'],
       callback: ({ resetTranscript }) => resetTranscript(),
@@ -45,7 +44,7 @@ const DictaphoneWidgetA = () => {
       matchInterim: true
     },
     {
-      command: [ 'Goodbye', 'bye', 'see you soon', 'tata', 'exit', 'quit', 'leave the chat', 'close', 'end', 'stop'],
+      command: ['Goodbye', 'bye', 'see you soon', 'tata', 'exit', 'quit', 'leave the chat', 'close', 'end', 'stop'],
       callback: () => {
         setMessage('Thanks for using Dictaphone!');
         stopDictophone();
@@ -55,9 +54,45 @@ const DictaphoneWidgetA = () => {
     {
       command: 'play *',
       callback: (song) => {
-        window.open('http://google.com/search?q=youtube:'+song);
+        window.open('http://google.com/search?q=youtube:' + song);
       }
-    }
+    },
+    {
+      command: ['what is *'],
+      callback: (query) => {
+        window.open('http://google.com/search?q=what is '+ query);
+      }
+    },
+    {
+      command: ['who is *'],
+      callback: (query) => {
+        window.open('http://google.com/search?q=who is '+ query);
+      }
+    },
+    {
+      command: ['what is the *'],
+      callback: (query) => {
+        window.open('http://google.com/search?q=what is the '+ query);
+      }
+    },
+    {
+      command: ['what is *'],
+      callback: (query) => {
+        window.open('http://google.com/search?q=what is '+ query);
+      }
+    },
+    {
+      command: ['how do *'],
+      callback: (query) => {
+        window.open('http://google.com/search?q=how do '+ query);
+      }
+    },
+    {
+      command: ['how to *'],
+      callback: (query) => {
+        window.open('http://google.com/search?q=how to '+ query);
+      }
+    },
   ]
 
   return (
