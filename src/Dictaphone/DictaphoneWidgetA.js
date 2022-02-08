@@ -1,6 +1,9 @@
 import React, { useState } from 'react'
 import Dictaphone from './Dictaphone'
 import { stopDictophone } from '../Dictaphones'
+import { Container } from 'react-bootstrap'
+
+import '../styles/dictaphoneWidgetA.css'
 
 const DictaphoneWidgetA = () => {
   const [message, setMessage] = useState('')
@@ -96,11 +99,11 @@ const DictaphoneWidgetA = () => {
   ]
 
   return (
-    <div>
-      <h3>Dictaphone</h3>
+    <Container>
+      <h1 className='center' >Dictaphone</h1>
       <p>{message}</p>
       <Dictaphone commands={commands} />
-    </div>
+    </Container>
   )
 }
 

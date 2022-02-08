@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import { useSpeechRecognition } from '../SpeechRecognition'
-import { Container, Row, Col } from 'react-bootstrap'
+import Stack from 'react-bootstrap/Stack'
+import Button from 'react-bootstrap/Button'
+
+import '../styles/dictophone.css'
+import { stopDictophone, listenContinuously } from '../Dictaphones'
 
 const Dictaphone = ({ commands }) => {
   const [transcribing, setTranscribing] = useState(true)
@@ -34,29 +38,27 @@ const Dictaphone = ({ commands }) => {
   }
 
   return (
-    <Container>
-      <Row>
-        <Col>
-          <Row>
-            <span>listening: {listening ? 'on' : 'off'}</span>
-          </Row>
-          <Row>
-            <span>transcribing: {transcribing ? 'on' : 'off'}</span>
-          </Row>
-          <Row>
-            <span>clearTranscriptOnListen: {clearTranscriptOnListen ? 'on' : 'off'}</span>
-          </Row>
-        </Col>
-      </Row>
-      <Row>
-        <button onClick={resetTranscript}>Reset</button>
-        <button onClick={toggleTranscribing}>Toggle transcribing</button>
-        <button onClick={toggleClearTranscriptOnListen}>Toggle clearTranscriptOnListen</button>
-      </Row>
-      <Row>
-        <span>{transcript}</span>
-      </Row>
-    </Container>
+    <>
+    <Stack bsPrefix="vstack">
+      <Stack bsPrefix="hstack">
+          <div>listening: {listening ? 'on' : 'off'}</div>
+          <div>transcribing: {transcribing ? 'on' : 'off'}</div>
+          <div>clearTranscriptOnListen: {clearTranscriptOnListen ? 'on' : 'off'}</div>
+      </Stack>
+      <Stack bsPrefix="hstack" >
+        <Button variant="danger" onClick={resetTranscript}>Reset</Button>
+        <Button variant="outline-warning" onClick={toggleTranscribing}>Toggle transcribing</Button>
+        <Button variant="outline-warning" onClick={toggleClearTranscriptOnListen}>Toggle clearTranscriptOnListen</Button>
+      </Stack>
+      <Stack bsPrefix="hstack" >
+      <div>{transcript}</div>
+      </Stack>
+      <Stack bsPrefix="hstack" >
+      <Button onClick={listenContinuously}>Listen</Button>
+      <Button onClick={stopDictophone}>Stop</Button>
+    </Stack>
+    </Stack>
+    </>
   )
 }
 
