@@ -33,15 +33,27 @@ const Assistant = ({ commands }) => {
   }
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column' }}>
-      <span>listening: {listening ? 'on' : 'off'}</span>
-      <span>transcribing: {transcribing ? 'on' : 'off'}</span>
-      <span>clearTranscriptOnListen: {clearTranscriptOnListen ? 'on' : 'off'}</span>
-      <button onClick={resetTranscript}>Reset</button>
-      <button onClick={toggleTranscribing}>Toggle transcribing</button>
-      <button onClick={toggleClearTranscriptOnListen}>Toggle clearTranscriptOnListen</button>
-      <span>{transcript}</span>
-    </div>
+    <>
+    <Stack bsPrefix="vstack">
+      <Stack bsPrefix="hstack">
+          <div>listening: {listening ? 'on' : 'off'}</div>
+          <div>transcribing: {transcribing ? 'on' : 'off'}</div>
+          <div>clearTranscriptOnListen: {clearTranscriptOnListen ? 'on' : 'off'}</div>
+      </Stack>
+      <Stack bsPrefix="hstack" >
+        <Button variant="danger" onClick={resetTranscript}>Reset</Button>
+        <Button variant="outline-warning" onClick={toggleTranscribing}>Toggle transcribing</Button>
+        <Button variant="outline-warning" onClick={toggleClearTranscriptOnListen}>Toggle clearTranscriptOnListen</Button>
+      </Stack>
+      <Stack bsPrefix="hstack" >
+      <div>{transcript}</div>
+      </Stack>
+      <Stack bsPrefix="hstack" >
+      <Button onClick={listenContinuously}>Listen</Button>
+      <Button onClick={stopDictophone}>Stop</Button>
+    </Stack>
+    </Stack>
+    </>
   )
 }
 
