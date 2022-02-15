@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
-import Dictaphone from './Dictaphone'
-import { stopDictophone } from '../Dictaphones'
+import Assistant from './Assistant'
+import { stopDictophone } from './Dictaphones'
 
-const DictaphoneWidgetA = () => {
+const AssistantPage = () => {
   const [message, setMessage] = useState('')
   const commands = [
     {
@@ -46,7 +46,7 @@ const DictaphoneWidgetA = () => {
     {
       command: ['Goodbye', 'bye', 'see you soon', 'tata', 'exit', 'quit', 'leave the chat', 'close', 'end', 'stop'],
       callback: () => {
-        setMessage('Thanks for using Dictaphone!');
+        setMessage('Thanks for using Assistant!');
         stopDictophone();
       },
       matchInterim: true
@@ -97,11 +97,11 @@ const DictaphoneWidgetA = () => {
 
   return (
     <div>
-      <h3>Dictaphone</h3>
+      <h3>Assistant</h3>
       <p>{message}</p>
-      <Dictaphone commands={commands} />
+      <Assistant commands={commands} />
     </div>
   )
 }
 
-export default DictaphoneWidgetA
+export default AssistantPage

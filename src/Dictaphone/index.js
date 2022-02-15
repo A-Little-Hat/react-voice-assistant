@@ -1,3 +1,3 @@
-import DictaphoneWidgetA from './DictaphoneWidgetA'
+import DictaphoneWidgetA from './AssistantPage'
 
 export { DictaphoneWidgetA}

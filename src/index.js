@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Dictaphones from './Dictaphones';
+import Dictaphones from './Dictaphone/Dictaphones';
 
 ReactDOM.render(
   <React.StrictMode>

@@ -1,6 +1,6 @@
 import React from 'react'
-import { DictaphoneWidgetA } from './Dictaphone'
-import SpeechRecognition from './SpeechRecognition'
+import { DictaphoneWidgetA } from '.'
+import SpeechRecognition from '../core/SpeechRecognition'
 export const stopDictophone = () => SpeechRecognition.stopListening();
 
 export default () => {

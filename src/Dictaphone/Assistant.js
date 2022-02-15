@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
-import { useSpeechRecognition } from '../SpeechRecognition'
+import { useSpeechRecognition } from '../core/SpeechRecognition'
 
-const Dictaphone = ({ commands }) => {
+const Assistant = ({ commands }) => {
   const [transcribing, setTranscribing] = useState(true)
   const [clearTranscriptOnListen, setClearTranscriptOnListen] = useState(true)
   const toggleTranscribing = () => setTranscribing(!transcribing)
@@ -45,4 +45,4 @@ const Dictaphone = ({ commands }) => {
   )
 }
 
-export default Dictaphone
+export default Assistant

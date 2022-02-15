@@ -4,11 +4,11 @@ import {
   commandToRegExp,
   compareTwoStringsUsingDiceCoefficient,
   browserSupportsPolyfills
-} from './utils'
-import { clearTranscript, appendTranscript } from './actions'
-import { transcriptReducer } from './reducers'
+} from '../utils/utils'
+import { clearTranscript, appendTranscript } from '../utils/actions'
+import { transcriptReducer } from '../utils/reducers'
 import RecognitionManager from './RecognitionManager'
-import isAndroid from './isAndroid'
+import isAndroid from '../utils/isAndroid'
 import NativeSpeechRecognition from './NativeSpeechRecognition'
 
 let _browserSupportsSpeechRecognition = !!NativeSpeechRecognition
