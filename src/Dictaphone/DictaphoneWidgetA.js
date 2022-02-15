@@ -1,8 +1,11 @@
 import React, { useState } from 'react'
-import Assistant from './Assistant'
-import { stopDictophone } from './Dictaphones'
+import Dictaphone from './Dictaphone'
+import { stopDictophone } from '../Dictaphones'
+import { Container } from 'react-bootstrap'
 
-const AssistantPage = () => {
+import '../styles/dictaphoneWidgetA.css'
+
+const DictaphoneWidgetA = () => {
   const [message, setMessage] = useState('')
   const commands = [
     {
@@ -46,7 +49,7 @@ const AssistantPage = () => {
     {
       command: ['Goodbye', 'bye', 'see you soon', 'tata', 'exit', 'quit', 'leave the chat', 'close', 'end', 'stop'],
       callback: () => {
-        setMessage('Thanks for using Assistant!');
+        setMessage('Thanks for using Dictaphone!');
         stopDictophone();
       },
       matchInterim: true
@@ -96,12 +99,12 @@ const AssistantPage = () => {
   ]
 
   return (
-    <div>
-      <h3>Assistant</h3>
+    <Container>
+      <h1 className='center' >Dictaphone</h1>
       <p>{message}</p>
-      <Assistant commands={commands} />
-    </div>
+      <Dictaphone commands={commands} />
+    </Container>
   )
 }
 
-export default AssistantPage
+export default DictaphoneWidgetA

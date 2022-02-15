@@ -1,5 +1,5 @@
-import isAndroid from '../utils/isAndroid'
-import { debounce, concatTranscripts, browserSupportsPolyfills } from '../utils/utils'
+import isAndroid from './isAndroid'
+import { debounce, concatTranscripts, browserSupportsPolyfills } from './utils'
 import { isNative } from './NativeSpeechRecognition'
 
 export default class RecognitionManager {

@@ -1,4 +1,4 @@
-import { CLEAR_TRANSCRIPT, APPEND_TRANSCRIPT } from '../constants/constants'
+import { CLEAR_TRANSCRIPT, APPEND_TRANSCRIPT } from './constants'
 import { concatTranscripts } from './utils'
 
 const transcriptReducer = (state, action) => {

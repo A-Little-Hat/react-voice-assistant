@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react'
-import { useSpeechRecognition } from '../core/SpeechRecognition'
-import Button from 'react-bootstrap/Button'
+import { useSpeechRecognition } from '../SpeechRecognition'
 import Stack from 'react-bootstrap/Stack'
-import { listenContinuously, stopDictophone } from './Dictaphones'
+import Button from 'react-bootstrap/Button'
 
+import '../styles/dictophone.css'
+import { stopDictophone, listenContinuously } from '../Dictaphones'
 
-const Assistant = ({ commands }) => {
+const Dictaphone = ({ commands }) => {
   const [transcribing, setTranscribing] = useState(true)
   const [clearTranscriptOnListen, setClearTranscriptOnListen] = useState(true)
   const toggleTranscribing = () => setTranscribing(!transcribing)
@@ -61,4 +62,4 @@ const Assistant = ({ commands }) => {
   )
 }
 
-export default Assistant
+export default Dictaphone
