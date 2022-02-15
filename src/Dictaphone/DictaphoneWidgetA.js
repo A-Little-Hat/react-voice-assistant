@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Dictaphone from './Dictaphone'
-import { stopDictophone } from '../Dictaphones'
+import { stopDictophone } from '../app/Dictaphones'
 import { Container } from 'react-bootstrap'
 
 import '../styles/dictaphoneWidgetA.css'
@@ -29,12 +29,6 @@ const DictaphoneWidgetA = () => {
           window.open('https://www.' + site + '.com');
         }
       },
-    },
-    {
-      command: 'turn on chrome',
-      callback: async (app) => {
-        setMessage(`Opening ${app}`)
-      }
     },
     {
       command: ['clear', 'reset', 'clear'],
@@ -76,12 +70,6 @@ const DictaphoneWidgetA = () => {
       command: ['what is the *'],
       callback: (query) => {
         window.open('http://google.com/search?q=what is the '+ query);
-      }
-    },
-    {
-      command: ['what is *'],
-      callback: (query) => {
-        window.open('http://google.com/search?q=what is '+ query);
       }
     },
     {

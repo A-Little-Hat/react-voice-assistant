@@ -1,4 +1,4 @@
-import { CLEAR_TRANSCRIPT, APPEND_TRANSCRIPT } from './constants'
+import { CLEAR_TRANSCRIPT, APPEND_TRANSCRIPT } from '../constants/constants';
 
 export const clearTranscript = () => {
   return { type: CLEAR_TRANSCRIPT }

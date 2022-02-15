@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react'
-import { useSpeechRecognition } from '../SpeechRecognition'
+import { useSpeechRecognition } from '../core/SpeechRecognition'
 import Stack from 'react-bootstrap/Stack'
 import Button from 'react-bootstrap/Button'
 
 import '../styles/dictophone.css'
-import { stopDictophone, listenContinuously } from '../Dictaphones'
+import { stopDictophone, listenContinuously } from '../app/Dictaphones'
 
 const Dictaphone = ({ commands }) => {
   const [transcribing, setTranscribing] = useState(true)
